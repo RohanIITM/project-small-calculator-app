@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 50px;
+        }
+        .calculator {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        #total-sales {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h2>Simple Calculator</h2>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">+</span>
+                <input type="text" class="form-control" id="value1" placeholder="Addend 1" aria-label="Addend 1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">+</span>
+                <input type="text" class="form-control" id="value2" placeholder="Addend 2" aria-label="Addend 2">
+            </div>
+            <button class="btn btn-primary" id="calc-btn">Calculate</button>
+            <div id="total-sales" class="alert alert-info" role="alert">
+                Total Sales: <span id="result">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS for Calculator Functionality -->
+    <script>
+        document.getElementById('calc-btn').onclick = function () {
+            // Retrieve input values
+            var value1 = parseFloat(document.getElementById('value1').value) || 0;
+            var value2 = parseFloat(document.getElementById('value2').value) || 0;
+            // Calculate total sales
+            var totalSales = value1 + value2;
+            // Display result
+            document.getElementById('result').textContent = totalSales;
+        };
+    </script>
+</body>
+</html>
